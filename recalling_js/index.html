@@ -5,101 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        // let a = 30;
-        let a = "this is a variable";
-        console.log(a);
+        // 1. Variables
+        let name = 'John Doe';  // String variable
+        const age = 30;         // Number variable
+        let isActive = true;   // Boolean variable
+        console.log('Name:', name);
+        console.log('Age:', age);
+        console.log('Is Active:', isActive);
 
-        function hi(){
-            console.log("hiii")
+        // 2. Functions
+        function greet(person) {
+            return `Hello, ${person}!`;
+        }
+        console.log(greet(name)); // Outputs: Hello, John Doe!
+
+        // Existing Function
+        function hi() {
+            console.log("hiii");
         }
 
-        document.addEventListener("click", function click(){
+        // 3. Objects
+        let person = {
+            name: 'Jane Doe',
+            age: 25,
+            greet: function() {
+                return `Hello, my name is ${this.name}.`;
+            }
+        };
+        console.log('Person Name:', person.name);
+        console.log(person.greet()); // Outputs: Hello, my name is Jane Doe.
+
+        // 4. Arrays
+        let arr = [5, 6, 9, 8, 2, 3, 6, 7, 6];
+        arr.forEach(element => {
+            console.log(element);
+        });
+
+        // Adding more elements to the array
+        arr.push(10);
+        console.log('Updated Array:', arr);
+
+        // Iterating over the updated array
+        arr.forEach((element, index) => {
+            console.log(`${index}: ${element}`);
+        });
+
+        // 5. Basic DOM Manipulation
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create a new div element
+            let newDiv = document.createElement('div');
+            newDiv.textContent = 'This is a new div created with JavaScript.';
+            // Append the new div to the body
+            document.body.appendChild(newDiv);
+
+            // Update existing content
+            let header = document.querySelector('h1');
+            if (header) {
+                header.textContent = 'Header updated by JavaScript!';
+            }
+        });
+
+        // Existing Event Listener
+        document.addEventListener("click", function click() {
+            // Uncomment this to show an alert
             // alert("help!!!");
             let conf = confirm("you sure about this ??");
             console.log(conf);
         });
 
-        let arr = [5,6,9,8,2,3,6,7,6];
-        arr.forEach(element => {
-            console.log(element);
-        });
-
-        // JavaScript Basics
-
-// 1. Variables
-let name = 'John Doe';  // String variable
-const age = 30;         // Number variable
-let isActive = true;   // Boolean variable
-
-// 2. Functions
-function greet(person) {
-    return `Hello, ${person}!`;
-}
-
-// Using the function
-console.log(greet(name)); // Outputs: Hello, John Doe!
-
-// 3. Objects
-let person = {
-    name: 'Jane Doe',
-    age: 25,
-    greet: function() {
-        return `Hello, my name is ${this.name}.`;
-    }
-};
-
-// Accessing object properties
-console.log(person.name);   // Outputs: Jane Doe
-console.log(person.greet()); // Outputs: Hello, my name is Jane Doe.
-
-// 4. Arrays
-let fruits = ['Apple', 'Banana', 'Cherry'];
-
-// Accessing array elements
-console.log(fruits[0]); // Outputs: Apple
-
-// Adding an element to the array
-fruits.push('Date');
-console.log(fruits); // Outputs: ['Apple', 'Banana', 'Cherry', 'Date']
-
-// Iterating over an array
-fruits.forEach((fruit, index) => {
-    console.log(`${index}: ${fruit}`);
-});
-
-// 5. Basic DOM Manipulation
-document.addEventListener('DOMContentLoaded', () => {
-    // Create a new div element
-    let newDiv = document.createElement('div');
-    newDiv.textContent = 'This is a new div created with JavaScript.';
-    
-    // Append the new div to the body
-    document.body.appendChild(newDiv);
-    
-    // Update existing content
-    let header = document.getElementById('header');
-    if (header) {
-        header.textContent = 'Header updated by JavaScript!';
-    }
-});
-
-// HTML Structure for DOM manipulation example
-document.write(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>JavaScript Basics</title>
-    </head>
-    <body>
-        <h1 id="header">Original Header</h1>
-        <script src="script.js"></script>
-    </body>
-    </html>
-`);
-
     </script>
 </head>
 <body>
-    <h1>js basic tute for react </h1>
+    <h1>js basic tute for react</h1>
 </body>
 </html>

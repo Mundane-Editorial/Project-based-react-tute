@@ -3,33 +3,26 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
+import { useState } from 'react';
 
 let name = "Mundane Editorial"  //variable name
 function App() {  // Function-based component
-  // return (  // Data inside return in JSX: JSX is HTML in the form of JavaScript
-  //   <>
-  //     <h1>This fragment example</h1>  {/* 1st element */}
-  //     <div classNameName="App">  {/* 2nd element */}
-  //       <header classNameName="App-header">
-  //         <img src={logo} classNameName="App-logo" alt="logo" />
-  //         <p>
-  //           Edit <code>src/App.js</code> and save to reload.
-  //         </p>
-  //         <a
-  //           classNameName="App-link"
-  //           href="https://reactjs.org"
-  //           target="_blank"
-  //           rel="noopener noreferrer"
-  //         >
-  //           Learn React
-  //         </a>
-  //       </header>
-  //     </div>
-  //   </>
-  // );  // This returns only 1 element. If you need to return multiple elements, use JSX fragments instead
+
+  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
+
+  const toggleMode =()=>{
+    if(mode === 'light'){
+      setMode('dark');
+      document.body.style.backgroundColor = '#000';
+    }else{
+      setMode('light');
+      document.body.style.backgroundColor = '#FFF';
+    }
+  }
+  
   return (
     <>
-      <Navbar title="TextUtils" />
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <div className="container my-3">
         {/* <TextForm heading="Enter statement to analyze"/> */}
         <About />

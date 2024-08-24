@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
 
 let name = "Mundane Editorial"  //variable name
 function App() {  // Function-based component
@@ -30,7 +31,8 @@ function App() {  // Function-based component
     <>
       <Navbar title="TextUtils" />
       <div className="container my-3">
-        <TextForm heading="Enter statement to analyze"/>
+        {/* <TextForm heading="Enter statement to analyze"/> */}
+        <About />
       </div>
     </>
   );
